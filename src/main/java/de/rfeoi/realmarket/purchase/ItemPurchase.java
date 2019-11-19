@@ -7,12 +7,14 @@ public class ItemPurchase {
     private long boughtTime;
     private Double boughtPrice;
     private PurchaseType type;
+    private double weighting;
 
     public ItemPurchase(int amount, long boughtTime, Double boughtPrice, PurchaseType type) {
         this.amount = amount;
         this.boughtTime = boughtTime;
         this.boughtPrice = boughtPrice;
         this.type = type;
+        weighting = 1;
     }
 
     public int getAmount() {
@@ -29,5 +31,13 @@ public class ItemPurchase {
 
     public PurchaseType getType() {
         return type;
+    }
+
+    public double getWeighting() {
+        return weighting;
+    }
+
+    public void updateWeighting() {
+        weighting = weighting - 0.05;
     }
 }
